@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "ShowPersonalInfo";
+    Layout = null;
+}
+<div>
+    <label>Namn: </label>
+    <input type="text" /></input>
+</div>
+<div>
+    <label>Efternamn: </label>
+    <input type="text" /></input>
+</div>
+<div>
+    <label>Tele: </label>
+    <input type="text" /></input>
+</div>
+<div>
+    <label>Adress: </label>
+    <input type="text" /></input>
+</div>
+<div>
+    <button id="clickPersonal">Nästa</button>
+</div>
+<script>
+    $('#clickPersonal').click(function () {
+        console.log('In');
+        $.ajax({
+            url: 'ShowBrfSelect',
+            type: 'GET',
+            error: function () {
+                //$('#info').html('<p>An error has occurred</p>');
+            },
+            success: function (data) {
+                console.log('success');
+                $('#brfInfo').append(data);
+                $('#personalInfo').hide();
+                $('#loginInfo').hide();
+            }
+        });
+        event.preventDefault();
+    });
+</script>

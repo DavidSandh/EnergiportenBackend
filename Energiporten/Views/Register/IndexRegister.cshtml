@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "IndexRegister";
+}
+
+
+<h2>Registrera</h2>
+<form>
+    <div id="loginInfo">
+        <div>
+            <label>E-post: </label>
+            <input type="text" /></input>
+        </div>
+        <div>
+            <label>Lösenord: </label>
+            <input type="text" /></input>
+        </div>
+        <div>
+            <label>Lösenord igen: </label>
+            <input type="text" /></input>
+        </div>
+        <div>
+            <button id="clickLogin">Nästa</button>
+        </div>
+    </div>
+    <div id="personalInfo"></div>
+    <div id="brfInfo"></div>
+</form>
+<script>
+    $('#clickLogin').click(function () {
+        $.ajax({
+            url: 'ShowPersonalInfo',
+            type: 'GET',
+            error: function () {
+                //$('#info').html('<p>An error has occurred</p>');
+            },
+            success: function (data) {
+                $('#personalInfo').append(data);
+                $('#loginInfo').hide();
+            }
+        });
+        event.preventDefault();
+    });
+
+    $('#goBack').click(function () {
+
+    });
+</script>

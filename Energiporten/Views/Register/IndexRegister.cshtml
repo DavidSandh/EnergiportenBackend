@@ -2,22 +2,22 @@
 @{
     ViewBag.Title = "IndexRegister";
 }
-
+@model Energiporten.Models.RegisterModel
 
 <h2>Registrera</h2>
-<form>
+<form method="post" action="SubmitUser">
     <div id="loginInfo">
         <div>
             <label>E-post: </label>
-            <input type="text" /></input>
+            <input type="text" name="Email" class="form-control" /></input>
         </div>
         <div>
             <label>Lösenord: </label>
-            <input type="text" /></input>
+            <input type="text" name="Password" /></input>
         </div>
         <div>
             <label>Lösenord igen: </label>
-            <input type="text" /></input>
+            <input type="text" name="PasswordAgain" /></input>
         </div>
         <div>
             <button id="clickLogin">Nästa</button>
@@ -40,9 +40,5 @@
             }
         });
         event.preventDefault();
-    });
-
-    $('#goBack').click(function () {
-
     });
 </script>

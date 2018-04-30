@@ -15,6 +15,18 @@ namespace Energiporten.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult ValidateEmail(string email)
+        {
+            if (email.Equals("test@test.se")) //If e-mail already exists
+            {
+                return Json(new { message = "E-postadressen är redan registrerad" });
+            }
+
+            return Json(new { message = "E-postadressen är ledig" });
+
+        }
+
         public ActionResult ShowPersonalInfo()
         {
             //Kolla loginfälten

@@ -9,15 +9,17 @@
     <div id="loginInfo">
         <div>
             <label>E-post: </label>
-            <input type="text" name="Email" class="form-control" /></input>
+            <input id="email" type="text" name="Email" class="form-control" /></input>
+            <div id="emailMessage"></div>
         </div>
         <div>
             <label>Lösenord: </label>
-            <input type="text" name="Password" /></input>
+            <input id="password" type="password" name="Password" /></input>
         </div>
         <div>
             <label>Lösenord igen: </label>
-            <input type="text" name="PasswordAgain" /></input>
+            <input id="passwordAgain" type="password" name="PasswordAgain" /></input>
+            <div id="passwordMessage"></div>
         </div>
         <div>
             <button id="clickLogin">Nästa</button>
@@ -32,7 +34,7 @@
             url: 'ShowPersonalInfo',
             type: 'GET',
             error: function () {
-                //$('#info').html('<p>An error has occurred</p>');
+                console.log("Error");
             },
             success: function (data) {
                 $('#personalInfo').append(data);
@@ -40,5 +42,34 @@
             }
         });
         event.preventDefault();
+    });
+
+    $('#email').change(function () {
+        var email = $('#email').val();
+        $('#emailMessage').empty();
+
+        $.ajax({
+            url: 'ValidateEmail',
+            type: 'POST',
+            data: {
+                //__RequestVerificationToken: token,
+                email: email
+            },
+            success: function (data) {
+                $('#emailMessage').append('<span>' + data.message + '</span>');
+            }
+        });
+    });
+
+    $('#passwordAgain').keyup(function () {
+        var password = $('#password').val();
+        var passwordAgain = $('#passwordAgain').val();
+        $('#passwordMessage').empty();
+
+        if (password != passwordAgain) {
+            $('#passwordMessage').append('<span>Lösenorden matchar inte varandra</span>');
+        } else {
+            $('#passwordMessage').append('<span>Lösenorden matchar varandra</span>');
+        }
     });
 </script>

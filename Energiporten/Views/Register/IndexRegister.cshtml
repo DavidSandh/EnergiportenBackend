@@ -4,29 +4,47 @@
 }
 @model Energiporten.Models.RegisterModel
 
-<h2>Registrera</h2>
+<h3>Registrera</h3>
 <form method="post" action="SubmitUser">
-    <div id="loginInfo">
-        <div>
-            <label>E-post: </label>
-            <input id="email" type="text" name="Email" class="form-control" /></input>
-            <div id="emailMessage"></div>
-        </div>
-        <div>
-            <label>Lösenord: </label>
-            <input id="password" type="password" name="Password" /></input>
-        </div>
-        <div>
-            <label>Lösenord igen: </label>
-            <input id="passwordAgain" type="password" name="PasswordAgain" /></input>
-            <div id="passwordMessage"></div>
-        </div>
-        <div>
-            <button id="clickLogin">Nästa</button>
-        </div>
-    </div>
-    <div id="personalInfo"></div>
-    <div id="brfInfo"></div>
+	
+	<div id="loginInfo" class="form-group">
+		<div class="stepwizard">
+			<div class="stepwizard-row">
+				<div class="stepwizard-step">
+					<a type="button" class="btn btn-primary btn-circle">1</a>
+					<p>Registrera Email  </p>
+				</div>
+				<div class="stepwizard-step">
+					<a type="button" id="click2"class="btn btn-default btn-circle">2</a>
+					<p>Personlig Information</p>
+				</div>
+				<div class="stepwizard-step">
+					<button type="button" class="btn btn-default btn-circle">3</button>
+					<p>Val av Brf</p>
+				</div>
+
+			</div>
+		</div>
+		<div>
+			<label>E-post: </label>
+			<input id="email" type="text" name="Email" class="form-control" /></input>
+			<div id="emailMessage"></div>
+		</div>
+		<div>
+			<label>Lösenord: </label>
+			<input id="password" type="password" name="Password" /></input>
+		</div>
+		<div>
+			<label>Lösenord igen: </label>
+			<input id="passwordAgain" type="password" name="PasswordAgain" /></input>
+			<div id="passwordMessage"></div>
+		</div>
+		<div>
+			<button id="clickLogin">Nästa</button>
+		</div>
+	</div>
+	<div id="personalInfo"></div>
+	<div id="brfInfo"></div>
 </form>
 <script>
     $('#clickLogin').click(function () {
@@ -43,6 +61,21 @@
         });
         event.preventDefault();
     });
+
+	$('#click2').click(function () {
+		$.ajax({
+			url: 'ShowPersonalInfo',
+			type: 'GET',
+			error: function () {
+				console.log("Error");
+			},
+			success: function (data) {
+				$('#personalInfo').append(data);
+				$('#loginInfo').hide();
+			}
+		});
+		event.preventDefault();
+	});
 
     $('#email').change(function () {
         var email = $('#email').val();

@@ -1,43 +1,67 @@
 ﻿
 @{
-    ViewBag.Title = "ShowPersonalInfo";
-    Layout = null;
-}
-<div>
-    <label>Namn: </label>
-    <input type="text" name="FirstName" /></input>
+	ViewBag.Title = "ShowPersonalInfo";
+	Layout = null;
+}<div class="stepwizard">
+	<div class="stepwizard-row">
+		<div class="stepwizard-step">
+			<a type="button" id="click1" class="btn btn-default btn-circle">1</a>
+			<p>Registrera Email  </p>
+		</div>
+		<div class="stepwizard-step">
+			<a type="button" class="btn btn-primary btn-circle">2</a>
+			<p>Personlig Information</p>
+		</div>
+		<div class="stepwizard-step">
+			<button type="button" id="clickPersonal" class="btn btn-default btn-circle">3</button>
+			<p>Val av Brf</p>
+		</div>
+
+	</div>
 </div>
 <div>
-    <label>Efternamn: </label>
-    <input type="text" name="LastName" /></input>
+	<label>Namn: </label>
+	<input type="text" name="FirstName" /></input>
 </div>
 <div>
-    <label>Tele: </label>
-    <input type="text" name="Phone" /></input>
+	<label>Efternamn: </label>
+	<input type="text" name="LastName" /></input>
 </div>
 <div>
-    <label>Adress: </label>
-    <input type="text" name="Address" /></input>
+	<label>Tele: </label>
+	<input type="text" name="Phone" /></input>
 </div>
 <div>
-    <button id="clickPersonal">Nästa</button>
+	<label>Adress: </label>
+	<input type="text" name="Address" /></input>
 </div>
+<div>
+	<button id="clickPersonal">Nästa</button>
+</div>
+
 <script>
-    $('#clickPersonal').click(function () {
-        console.log('In');
-        $.ajax({
-            url: 'ShowBrfSelect',
-            type: 'GET',
-            error: function () {
-                //$('#info').html('<p>An error has occurred</p>');
-            },
-            success: function (data) {
-                console.log('success');
-                $('#brfInfo').append(data);
-                $('#personalInfo').hide();
-                $('#loginInfo').hide();
-            }
-        });
-        event.preventDefault();
-    });
+	$('#clickPersonal').click(function () {
+		console.log('In');
+		$.ajax({
+			url: 'ShowBrfSelect',
+			type: 'GET',
+			error: function () {
+				//$('#info').html('<p>An error has occurred</p>');
+			},
+			success: function (data) {
+				console.log('success');
+				$('#brfInfo').append(data);
+				$('#personalInfo').hide();
+				$('#loginInfo').hide();
+			}
+		});
+		event.preventDefault();
+	});
+
+	$('#click1').click(function () {
+		console.log('In');
+		$('#loginInfo').show();
+		$('#personalInfo').hide();
+		event.preventDefault();
+	});
 </script>

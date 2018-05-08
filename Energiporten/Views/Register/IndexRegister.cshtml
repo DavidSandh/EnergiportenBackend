@@ -15,7 +15,7 @@
 					<p>Registrera Email  </p>
 				</div>
 				<div class="stepwizard-step">
-					<a type="button" id="click2"class="btn btn-default btn-circle">2</a>
+					<a type="button" class="btn btn-default btn-circle">2</a>
 					<p>Personlig Information</p>
 				</div>
 				<div class="stepwizard-step">
@@ -61,22 +61,7 @@
         });
         event.preventDefault();
     });
-
-	$('#click2').click(function () {
-		$.ajax({
-			url: 'ShowPersonalInfo',
-			type: 'GET',
-			error: function () {
-				console.log("Error");
-			},
-			success: function (data) {
-				$('#personalInfo').append(data);
-				$('#loginInfo').hide();
-			}
-		});
-		event.preventDefault();
-	});
-
+	
     $('#email').change(function () {
         var email = $('#email').val();
         $('#emailMessage').empty();

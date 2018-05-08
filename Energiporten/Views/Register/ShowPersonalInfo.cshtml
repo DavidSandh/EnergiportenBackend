@@ -5,7 +5,7 @@
 }<div class="stepwizard">
 	<div class="stepwizard-row">
 		<div class="stepwizard-step">
-			<a type="button"  class="btn btn-default btn-circle">1</a>
+			<a type="button" class="btn btn-default btn-circle">1</a>
 			<p>Registrera Email  </p>
 		</div>
 		<div class="stepwizard-step">
@@ -19,6 +19,7 @@
 
 	</div>
 </div>
+
 <div>
 	<label>Namn: </label>
 	<input type="text" name="FirstName" /></input>
@@ -31,17 +32,37 @@
 	<label>Tele: </label>
 	<input type="text" name="Phone" /></input>
 </div>
-<div>
-	<label>Adress: </label>
-	<input type="text" name="Address" /></input>
+<div id="address-autocomplete">
+	<label for="address">Address</label>
+	<div id="locationField">
+		<input class="form-control" id="autocomplete" placeholder="Mingata 20A, Stockholm, 141 75, Stockholm län, Sverige"
+			   onFocus="geolocate()" type="text" autocomplete="off"></input>
+	</div>
+</div>
+<div id="address-form" style="display:none;">
+	<label for="address">Address</label>
+	<input name="address" type="text" class="form-control" id="route" maxlength="255" placeholder="Mingata" required></input>
+	<label for="adress">Gatunummer</label>
+	<input name="street_number" type="text" class="form-control" id="street_number" maxlength="10" placeholder="20A"></input>
+	<label for="zip">Postnummer</label>
+	<input name="zip" type="text" class="form-control" id="postal_code" maxlength="10" placeholder="141 75" required>
+	<label for="city">Stad</label>
+	<input name="city" type="text" class="form-control" id="postal_town" maxlength="100" placeholder="Stockholm" required></input>
+	<label for="admin">Admin</label>
+	<input name="admin" type="text" class="form-control" id="administrative_area_level_1" maxlength="100" placeholder="Stockholm län" required>
+	<label for="country">Land</label>
+	<input name="country" type="text" class="form-control" id="country" maxlength="100" placeholder="Sverige" required>
 </div>
 <div>
 	<button id="clickPersonal">Nästa</button>
 </div>
-
 <script>
+	$(document).on('change', '#autocomplete', function () {
+		$('#personalInfo').find('#address-form').show();
+		$('#personalInfo').find('#address-autocomplete').remove();
+	});
+
 	$('#clickPersonal').click(function () {
-		console.log('In');
 		$.ajax({
 			url: 'ShowBrfSelect',
 			type: 'GET',
@@ -57,5 +78,72 @@
 		});
 		event.preventDefault();
 	});
-	
+
+	// This example displays an address form, using the autocomplete feature
+	// of the Google Places API to help users fill in the information.
+
+	// This example requires the Places library. Include the libraries=places
+	// parameter when you first load the API. For example:
+	// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+	var placeSearch, autocomplete;
+	var componentForm = {
+		street_number: 'short_name',
+		route: 'long_name',
+		postal_town: 'long_name',
+		administrative_area_level_1: 'short_name',
+		country: 'long_name',
+		postal_code: 'short_name'
+	};
+
+	function initAutocomplete() {
+		// Create the autocomplete object, restricting the search to geographical
+		// location types.
+		autocomplete = new google.maps.places.Autocomplete(
+			(document.getElementById('autocomplete')),
+			{ types: ['geocode'] });
+
+		// When the user selects an address from the dropdown, populate the address
+		// fields in the form.
+		autocomplete.addListener('place_changed', fillInAddress);
+	}
+
+	function fillInAddress() {
+		// Get the place details from the autocomplete object.
+		var place = autocomplete.getPlace();
+
+		for (var component in componentForm) {
+			document.getElementById(component).value = '';
+			document.getElementById(component).disabled = false;
+		}
+
+		// Get each component of the address from the place details
+		// and fill the corresponding field on the form.
+		for (var i = 0; i < place.address_components.length; i++) {
+			var addressType = place.address_components[i].types[0];
+			if (componentForm[addressType]) {
+				var val = place.address_components[i][componentForm[addressType]];
+				document.getElementById(addressType).value = val;
+			}
+		}
+	}
+
+	// Bias the autocomplete object to the user's geographical location,
+	// as supplied by the browser's 'navigator.geolocation' object.
+	function geolocate() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function (position) {
+				var geolocation = {
+					lat: position.coords.latitude,
+					lng: position.coords.longitude
+				};
+				var circle = new google.maps.Circle({
+					center: geolocation,
+					radius: position.coords.accuracy
+				});
+				autocomplete.setBounds(circle.getBounds());
+			});
+		}
+	}
 </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVRlce9PBZki9IR8K4TLPe4hawRrp0Vdk&libraries=places&callback=initAutocomplete" async defer></script></script>

@@ -25,23 +25,26 @@
 
 			</div>
 		</div>
-		<div>
-			<label>E-post: </label>
-			<input id="email" type="text" name="Email" class="form-control" /></input>
-			<div id="emailMessage"></div>
-		</div>
-		<div>
-			<label>Lösenord: </label>
-			<input id="password" type="password" name="Password" /></input>
-		</div>
-		<div>
-			<label>Lösenord igen: </label>
-			<input id="passwordAgain" type="password" name="PasswordAgain" /></input>
-			<div id="passwordMessage"></div>
-		</div>
-		<div>
-			<button id="clickLogin">Nästa</button>
-		</div>
+		<form action="https://www.energiporten.se/" method="get" class="form-horizontal login">
+			<fieldset>
+				<div class="form-group">
+					<input type="text" name="email" class="form-control field" id="email" placeholder="E-postadress" required />
+				</div>
+				<div id="emailMessage"></div>
+				<div class="form-group">
+					<input type="password" id="password" name="password" class="form-control field" placeholder="Lösenord" required />
+				</div>
+				<div class="form-group">
+					<input type="password" id="passwordAgain" name="passwordAgain" class="form-control field" placeholder="Upprepa lösenord" required />
+				</div>
+				<div id="passwordMessage"></div>
+				<div class="form-group">
+
+					<input type="submit" id="clickLogin" class="center-block btn btn-info" value="nästa" />
+
+
+				</div>
+			</fieldset>
 	</div>
 	<div id="personalInfo"></div>
 	<div id="brfInfo"></div>
@@ -82,12 +85,30 @@
     $('#passwordAgain').keyup(function () {
         var password = $('#password').val();
         var passwordAgain = $('#passwordAgain').val();
-        $('#passwordMessage').empty();
+		var goodColor = "#66cc66";
+		var badColor = "#ff6666";
+		$('#passwordMessage').empty();
 
-        if (password != passwordAgain) {
+		if (password != passwordAgain) {
+			$('#passwordAgain').style.color = badColor;
             $('#passwordMessage').append('<span>Lösenorden matchar inte varandra</span>');
-        } else {
+		} else {
+			
             $('#passwordMessage').append('<span>Lösenorden matchar varandra</span>');
-        }
+		}
+		//Compare the values in the password field 
+		//and the confirmation field
+		if (password == passwordAgain) {
+			//The passwords match. 
+			//Set the color to the good color and inform
+			//the user that they have entered the correct password 
+			$('#passwordAgain').style.color = goodColor;
+			$('#passwordMessage').append('<span>Lösenorden matchar varandra</span>');
+		} else {
+			//The passwords do not match.
+			//Set the color to the bad color and
+			//notify the user.
+			$('#passwordMessage').append('<span>Lösenorden matchar inte varandra</span>');
+		}
     });
 </script>

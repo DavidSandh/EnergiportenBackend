@@ -37,8 +37,25 @@ $('#saveUser').click(function () {
             //$('#info').html('<p>An error has occurred</p>');
         },
         success: function (data) {
-            $('#loginInfo').hide();
+			$('#loginInfo').hide();
+			$('#brfInfo').hide();
         }
     });
 });
+	$('#addBrf').click(function () {
+		$.ajax({
+			url: 'ShowBuildingInfo',
+			type: 'GET',
+			error: function () {
+				console.log("Error");
+			},
+			success: function (data) {
+				$('#buildingInfo').append(data);
+				$('#brfInfo').hide();
+
+			}
+		});
+		event.preventDefault();
+	});
+
 </script>

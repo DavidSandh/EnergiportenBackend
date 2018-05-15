@@ -51,6 +51,15 @@ namespace Energiporten.Controllers
             return View();
         }
 
+        public ActionResult ShowPropertyInfo()
+        {
+            return View();
+        }
+
+        public ActionResult ShowEnergyInfo()
+        {
+            return View();
+        }
         [HttpPost]
         //ValidateAntiForgeryToken
         public ActionResult SubmitUser(RegisterModel model)

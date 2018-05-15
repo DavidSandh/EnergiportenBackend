@@ -1,7 +1,87 @@
-﻿
-@{
-    ViewBag.Title = "ShowEnergyInfo";
+﻿@{
+	ViewBag.Title = "ShowEnergyInfo";
+	Layout = null;
 }
+<div class="stepwizard">
+	<div class="stepwizard-row">
+		<div class="stepwizard-step">
+			<button type="button" class="btn btn-default btn-circle">1</button>
+			<p>Byggnad</p>
+		</div>
+		<div class="stepwizard-step">
+			<button type="button" class="btn btn-default btn-circle">2</button>
+			<p>Fastighet</p>
+		</div>
+		<div class="stepwizard-step">
+			<button type="button" class="btn btn-primary btn-circle">3</button>
+			<p>Energidata</p>
+		</div>
+	</div>
 
-<h2>ShowBuildingInfo</h2>
+</div>
+<div class="form-group">
+	<div class="col-xs-20">
+		<input type="text" class="form-control" placeholder="Huvudsakling uppvärmning">
+	</div>
+</div>
+<div class="form-group">
+	<div class="col-xs-20">
+		<input type="text" class="form-control" placeholder="Kompletterande uppvärmning">
+	</div>
+</div>
 
+<div class="form-group">
+	<div class="col-xs-20">
+		<input type="text" class="form-control" placeholder="Energiprestanda (enligt energideklaration)">
+	</div>
+</div>
+<div class="form-group">
+	<div class="col-xs-20">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Utförd energideklaration">
+			<div class="input-group-btn">
+				<button type="button" class="btn btn-info" data-toggle="popover" title="information" data-content="Energideklarationen är ett verktyg för att minska en byggnads energiåtgång, driftskostnader och utsläpp av växthusgaser. Den gör det enklare att se vilka åtgärder för energibesparing som är lönsamma och ger en möjlighet att skapa en bättre inomhusmiljö.
+">
+					<span class="glyphicon glyphicon-exclamation-sign"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-xs-20">
+	<label for="checkBox"> Gemensam energi </label>
+	<br>
+		<input type="checkbox" name="imd-tvattstuga" value="imd-tvattstuga"> IMD-tvättstuga</li>
+		<input type="checkbox" name="imd-tvv" value="imd-tvv"> IMD-tvv</li>
+		<input type="checkbox" name="imd-varme" value="imd-varme"> IMD-värme</li>
+		<input type="checkbox" name="energilagring" value="energilagring"> Energilagring</li>
+		<input type="checkbox" name="elbilsladdare" value="elbilsladdare"> Elbilsladdare</li>
+		<input type="checkbox" name="hiss" value="hiss"> Hiss</li>
+
+		<input type="checkbox" name="miljohus" value="miljohus"> Miljöhus (grönt tak)</li>
+		<input type="checkbox" name="vvc" value="vvc"> Tappvarmvattenslinga (VVC)</li>
+		<input type="checkbox" name="gronel" value="gronel"> Grön el</li>
+		<input type="checkbox" name="andelsagdel" value="andelsagdel"> Andelsägd el</li>
+		<input type="checkbox" name="tvattstuga" value="tvattstuga"> Gemensam tvättstuga</li>
+</div>
+<div class="col-xs-20">
+	<label for="checkBox"> Källsortering </label>
+	<br>
+		<input type="checkbox" name="restavfall" value="restavfall"> Restavfall (brännbart)</li>
+		<input type="checkbox" name="batterier" value="batterier"> Batterier</li>
+		<input type="checkbox" name="elektronik" value="elektronik"> Elektronik</li>
+		<input type="checkbox" name="glas" value="glas"> Glas</li>
+		<input type="checkbox" name="kartonger" value="kartonger"> Kartonger (wellpapp)</li>
+		<input type="checkbox" name="textiler" value="textiler"> Textiler</li>
+		<input type="checkbox" name="avfall" value="avfall"> Farlig avfall</li>
+		<input type="checkbox" name="metall" value="metall"> Metallförpackningar</li>
+		<input type="checkbox" name="matavfall" value="matavfall"> Matavfall</li>
+		<input type="checkbox" name="mediciner" value="medciner"> Mediciner/läkemedel</li>
+		<input type="checkbox" name="tidningar" value="tidningar"> Tidningar</li>
+		<input type="checkbox" name="tradgardsavfall" value="tradgardsavfall"> Trädgårdsavfall</li>
+</div>
+<br>
+<div>
+	<input type="submit" value="Slutför" id="nextbutton2" class="btn btn-success center-block" />
+</div>
+          </div>

@@ -2,7 +2,8 @@
 @{
 	ViewBag.Title = "ShowPersonalInfo";
 	Layout = null;
-}<div class="stepwizard">
+}
+<div class="stepwizard">
 	<div class="stepwizard-row">
 		<div class="stepwizard-step">
 			<a type="button" class="btn btn-default btn-circle">1</a>
@@ -16,45 +17,51 @@
 			<button type="button" class="btn btn-default btn-circle">3</button>
 			<p>Val av Brf</p>
 		</div>
-
 	</div>
 </div>
+<div class="form-group">
+	<input type="text" class="form-control field" placeholder="Förnamn" name="FirstName">
+</div>
 
-<div>
-	<label>Namn: </label>
-	<input type="text" name="FirstName" /></input>
+<div class="form-group">
+	<input type="text" class="form-control field" placeholder="Efternamn" name="LastName">
 </div>
-<div>
-	<label>Efternamn: </label>
-	<input type="text" name="LastName" /></input>
+
+<div class="form-group">
+	<input type="text" class="form-control field" placeholder="Telefonnummer" name="Phone">
 </div>
-<div>
-	<label>Tele: </label>
-	<input type="text" name="Phone" /></input>
-</div>
-<div id="address-autocomplete">
-	<label for="address">Address</label>
-	<div id="locationField">
-		<input class="form-control" id="autocomplete" placeholder="Mingata 20A, Stockholm, 141 75, Stockholm län, Sverige"
-			   onFocus="geolocate()" type="text" autocomplete="off"></input>
+
+<h5>Adress</h5>
+<div class="form-group">
+	<div id="address-autocomplete">
+		<div id="locationField">
+			<input class="form-control field" id="autocomplete" placeholder="Mingata 20A, Stockholm, 141 75, Stockholm län, Sverige"
+				   onFocus="geolocate()" type="text" autocomplete="off"></input>
+		</div>
+	</div>
+	<div id="address-form" style="display:none;">
+		<div class="form-group">
+			<input name="address" type="text" class="form-control field" id="route" maxlength="255" placeholder="Gata" required></input>
+		</div>
+		<div class="form-group">
+			<input name="street_number" type="text" class="form-control field" id="street_number" maxlength="10" placeholder="Gatunummer"></input>
+		</div>
+		<div class="form-group">
+			<input name="zip" type="text" class="form-control field" id="postal_code" maxlength="10" placeholder="Postnummer" required>
+		</div>
+		<div class="form-group">
+			<input name="city" type="text" class="form-control field" id="postal_town" maxlength="100" placeholder="Stad" required></input>
+		</div>
+		<div class="form-group">
+			<input name="admin" type="text" class="form-control field" id="administrative_area_level_1" maxlength="100" placeholder="Län" required>
+		</div>
+		<div class="form-group">
+			<input name="country" type="text" class="form-control field" id="country" maxlength="100" placeholder="Land" required>
+		</div>
 	</div>
 </div>
-<div id="address-form" style="display:none;">
-	<label for="address">Address</label>
-	<input name="address" type="text" class="form-control" id="route" maxlength="255" placeholder="Mingata" required></input>
-	<label for="adress">Gatunummer</label>
-	<input name="street_number" type="text" class="form-control" id="street_number" maxlength="10" placeholder="20A"></input>
-	<label for="zip">Postnummer</label>
-	<input name="zip" type="text" class="form-control" id="postal_code" maxlength="10" placeholder="141 75" required>
-	<label for="city">Stad</label>
-	<input name="city" type="text" class="form-control" id="postal_town" maxlength="100" placeholder="Stockholm" required></input>
-	<label for="admin">Admin</label>
-	<input name="admin" type="text" class="form-control" id="administrative_area_level_1" maxlength="100" placeholder="Stockholm län" required>
-	<label for="country">Land</label>
-	<input name="country" type="text" class="form-control" id="country" maxlength="100" placeholder="Sverige" required>
-</div>
 <div>
-	<button id="clickPersonal">Nästa</button>
+	<button id="clickPersonal" class="btn btn-success center-block">Nästa</button>
 </div>
 <script>
 	$(document).on('change', '#autocomplete', function () {

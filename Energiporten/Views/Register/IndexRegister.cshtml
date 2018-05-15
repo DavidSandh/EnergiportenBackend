@@ -4,9 +4,7 @@
 }
 @model Energiporten.Models.RegisterModel
 
-<h3>Registrera</h3>
 <form method="post" action="SubmitUser">
-
 	<div id="loginInfo" class="form-group">
 		<div class="stepwizard">
 			<div class="stepwizard-row">
@@ -22,7 +20,6 @@
 					<button type="button" class="btn btn-default btn-circle">3</button>
 					<p>Val av Brf</p>
 				</div>
-
 			</div>
 		</div>
 		<form action="https://www.energiporten.se/" method="get" class="form-horizontal login">
@@ -30,9 +27,7 @@
 				<div class="form-group">
 					<div id="emailMessage" class="confirmMessage"></div>
 					<input type="email" name="email" class="form-control field" id="email" placeholder="E-postadress" required />
-
 				</div>
-
 				<div class="form-group">
 					<input type="password" id="password" name="password" class="form-control field" placeholder="Lösenord" required />
 				</div>
@@ -41,16 +36,15 @@
 				</div>
 				<div id="passwordMessage" hidden></div>
 				<div class="form-group">
-
-					<input type="submit" id="clickLogin" class="center-block btn btn-info" value="nästa" disabled />
-
-
+					<input type="submit" id="clickLogin" class="btn btn-success center-block" value="nästa" />
 				</div>
 			</fieldset>
 	</div>
 	<div id="personalInfo"></div>
 	<div id="brfInfo"></div>
 	<div id="buildingInfo"></div>
+	<div id="propertyInfo"></div>
+	<div id="energyInfo"></div>
 </form>
 <script>
 	var correctEmail;

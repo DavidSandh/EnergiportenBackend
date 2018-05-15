@@ -3,141 +3,130 @@
 	ViewBag.Title = "ShowBuildingInfo";
 	Layout = null;
 }
-	<div class="stepwizard">
-		<div class="stepwizard-row">
-			<div class="stepwizard-step">
-				<a type="button" class="btn btn-default btn-circle">1</a>
-				<p>Registrera Email  </p>
-			</div>
-			<div class="stepwizard-step">
-				<a type="button" class="btn btn-default btn-circle">2</a>
-				<p>Personlig Information</p>
-			</div>
-			<div class="stepwizard-step">
-				<button type="button" class="btn btn-default btn-circle">3</button>
-				<p>Val av Brf</p>
-			</div>
-			<div class="stepwizard-step">
-				<button type="button" class="btn btn-primary btn-circle">4</button>
-				<p>Byggnadsinformation</p>
-			</div>
-			<div class="stepwizard-step">
-				<button type="button" class="btn btn-default btn-circle">5</button>
-				<p>Fastighetsinformation</p>
-			</div>
-			<div class="stepwizard-step">
-				<button type="button" class="btn btn-default btn-circle">6</button>
-				<p>Energidata</p>
-			</div>
+<div class="stepwizard">
+	<div class="stepwizard-row">
+		<div class="stepwizard-step">
+			<button type="button" class="btn btn-primary btn-circle">1</button>
+			<p>Byggnad</p>
 		</div>
-	</div>
-	<h3 class="font">Byggnadssinformation</h3>
-	<div class="form-group">
-		<div class="col-xs-20">
-			<input type="text" class="form-control" placeholder="Byggår">
+		<div class="stepwizard-step">
+			<button type="button" class="btn btn-default btn-circle">2</button>
+			<p>Fastighet</p>
 		</div>
-	</div>
-	<div class="form-group">
-		<div class="col-xs-20">
-			<input type="text" class="form-control" placeholder="Antal våningar">
-		</div>
-	</div>
-	<div class="form-group">
-		<div class="col-xs-20">
-			<input type="number" class="form-control" placeholder="Antal boende">
+		<div class="stepwizard-step">
+			<button type="button" class="btn btn-default btn-circle">3</button>
+			<p>Energidata</p>
 		</div>
 	</div>
 
-	<div class="form-group">
-		<div class="col-xs-20">
-			<div class="input-group">
-				<input type="number" class="form-control" placeholder="År som ventilationskontroll genomfördes">
-				<div class="input-group-btn">
-					<button type="button" class="btn btn-info" data-toggle="popover" title="information" data-content="Sedan 1991 finns det en förordning som innebär att funktionskontroll av ventilationssystem, OVK, i byggnader ska utföras. Av reglerna framgår hur funktionskontrollen går till. Såvida inte föreningen har installerat till- och frånluftssystem så gäller besiktningsprotokollet i sex år, annars 3 år.
+</div>
+<div class="form-group">
+	<input type="text" class="form-control field" placeholder="Byggår">
+</div>
+<div class="form-group">
+	<input type="text" class="form-control field" placeholder="Antal våningar">
+</div>
+<div class="form-group">
+	<input type="number" class="form-control field" placeholder="Antal boende">
+</div>
+
+<div class="form-group">
+	<div class="input-group">
+		<input type="number" class="form-control field" placeholder="År som ventilationskontroll genomfördes">
+		<div class="input-group-btn">
+			<button type="button" class="btn btn-info" data-toggle="popover" title="information" data-content="Sedan 1991 finns det en förordning som innebär att funktionskontroll av ventilationssystem, OVK, i byggnader ska utföras. Av reglerna framgår hur funktionskontrollen går till. Såvida inte föreningen har installerat till- och frånluftssystem så gäller besiktningsprotokollet i sex år, annars 3 år.
 Syftet är bland annat att säkerställa ett tillfredsställande inomhusklimat i byggnader och vid en besiktning kontrollera hur ventilationsanläggningen sköts och fungerar. Funktionskontroll ska utföras innan ett ventilationssystem tas i bruk för första gången, en första besiktning, eller vid en ombyggnad som även omfattat ventilationssystemet. Befintliga byggnader ska kontrolleras vid regelbundet återkommande besiktningar.">
-						<span class="glyphicon glyphicon-exclamation-sign"></span>
-					</button>
-				</div>
-			</div>
+				<span class="glyphicon glyphicon-exclamation-sign"></span>
+			</button>
 		</div>
 	</div>
+</div>
 
-	<div class="form-group">
-		<div class="col-xs-20">
-			<div class="input-group">
-				<select class="form-control">
-					<option>Ventilationstyp</option>
-					<option>F-system (Mekanisk frånluft)</option>
-					<option>FX-system (Mekanisk frånluft + återvinning)</option>
-					<option>FT-system (Mekanisk från- och tilluft)</option>
-					<option>FTX-system (FT + återvinning)</option>
-					<option>Annat</option>
-				</select>
-				<div class="input-group-btn">
-					<button type="button" class="btn btn-info" data-toggle="popover" title="information" data-content="Det finns olika sätt att ventilera en byggnad.
+<div class="form-group">
+	<div class="input-group">
+		<select class="form-control field">
+			<option>Ventilationstyp</option>
+			<option>F-system (Mekanisk frånluft)</option>
+			<option>FX-system (Mekanisk frånluft + återvinning)</option>
+			<option>FT-system (Mekanisk från- och tilluft)</option>
+			<option>FTX-system (FT + återvinning)</option>
+			<option>Annat</option>
+		</select>
+		<div class="input-group-btn">
+			<button type="button" class="btn btn-info" data-toggle="popover" title="information" data-content="Det finns olika sätt att ventilera en byggnad.
 S-system (Självdrag): I en byggnad med S-system kommer luften in genom tilluftsventiler eller otätheter. Luften lämnar byggnaden genom frånluftsventiler, ofta i kök och badrum. Det finns inga frånluftsfläktar kopplade till ventilationen. Självdragsprincipen är bäst fungerande under den kalla perioden av året och mindre bra under sommaren.
 F-system (Frånluft): I en byggnad med F-system finns det en frånluftsfläkt som hjälper till att suga ut luften. Tilluften sker genom uteluftsventiler i sovrum och vardagsrum antingen genom spaltventiler i fönster eller don i väggen.
 FT-system (Från- och tilluft): I en byggnad med FT-system styrs både från- och tilluft med fläktar för att säkra god inomhusmiljö.
 FTX-system (Från- och tilluft med värmeåtervinning): I en byggnad med FTX-system styrs både från- och tilluft med fläktar. Det som skiljer detta system från ett FT-system är att värmen i frånluften återvinns och tillförs tilluften. På så sätt minskar man uppvärmningsbehovet.">
-						<span class="glyphicon glyphicon-exclamation-sign"></span>
-					</button>
-				</div>
-			</div>
+				<span class="glyphicon glyphicon-exclamation-sign"></span>
+			</button>
 		</div>
 	</div>
-	<div class="form-group">
-		<div class="col-xs-20">
-			<div class="input-group">
-				<input type="text" class="form-control" placeholder="A-temp">
-				<div class="input-group-btn">
-					<button type="button" class="btn btn-info" data-toggle="popover" title="information" data-content="Arean i nämnaren skall vara definierad som Atemp, ett begrepp som också används i energiberäkningar enligt Boverkets Byggregler, definierad så här: Den golvarea i temperaturreglerade utrymmen som är avsedd att värmas till mer än 10 grader och som är begränsad av klimatskärmens insida."> <span class="glyphicon glyphicon-exclamation-sign"></span></button>
-				</div>
-			</div>
+</div>
+	</div>
+<div class="form-group">
+	<div class="input-group">
+		<input type="text" class="form-control field" placeholder="A-temp">
+		<div class="input-group-btn">
+			<button type="button" class="btn btn-info" data-toggle="popover" title="information" data-content="Arean i nämnaren skall vara definierad som Atemp, ett begrepp som också används i energiberäkningar enligt Boverkets Byggregler, definierad så här: Den golvarea i temperaturreglerade utrymmen som är avsedd att värmas till mer än 10 grader och som är begränsad av klimatskärmens insida."> <span class="glyphicon glyphicon-exclamation-sign"></span></button>
 		</div>
 	</div>
+</div>
 
-	<div class="form-group">
-		<div class="col-xs-20">
-			<input type="number" class="form-control" placeholder="Antal huskroppar">
+<div class="form-group">
+	<input type="number" class="form-control" placeholder="Antal huskroppar">
+</div>
+<div class="form-group">
+	<input type="number" class="form-control" placeholder="Antal lägenheter">
+</div>
+<div class="form-group">
+	<input type="text" class="form-control" placeholder="Inhomhustemperatur">
+</div>
+<div class="form-group">
+	<div class="input-group">
+		<select class="form-control" required>
+			<option>Elsäkringsstorlek</option>
+			<option>35A </option>
+			<option>50A</option>
+			<option>63A</option>
+			<option>80A</option>
+			<option>< 80A</option>
+		</select>
+		<div class="input-group-btn">
+			<button type="button" class="btn btn-info" data-toggle="popover" title="information" data-content="Installerad effekt gällande elförsörjning till fastigheten, oftast 35A, 50A eller 63A. Om ni har flera elabonnemang kopplat till er förening väljer ni att redovisa den huskropp som har högst effekt installerad.">
+				<span class="glyphicon glyphicon-exclamation-sign"></span>
+			</button>
 		</div>
 	</div>
-	<div class="form-group">
-		<div class="col-xs-20">
-			<input type="number" class="form-control" placeholder="Antal lägenheter">
-		</div>
+</div>
 	</div>
-	<div class="form-group">
-		<div class="col-xs-20">
-			<input type="text" class="form-control" placeholder="Inhomhustemperatur">
-		</div>
+<div class="form-group" id="checkboxes">
+	<label for="checkBox"> Föreningen har tillgång till: </label>
+	<div class="col-xs-20">
+		<input type="checkbox" name="alternatives" value="garage"> Garage
+		<input type="checkbox" name="carPool" value="car"> Bilpool
+		<input type="checkbox" name="bikePool" value="bike"> Cykelpool
 	</div>
-	<div class="form-group">
-		<div class="col-xs-20">
-			<div class="input-group">
-				<select class="form-control" required>
-					<option>Elsäkringsstorlek</option>
-					<option>35A </option>
-					<option>50A</option>
-					<option>63A</option>
-					<option>80A</option>
-					<option>< 80A</option>
-				</select>
-				<div class="input-group-btn">
-					<button type="button" class="btn btn-info" data-toggle="popover" title="information" data-content="Installerad effekt gällande elförsörjning till fastigheten, oftast 35A, 50A eller 63A. Om ni har flera elabonnemang kopplat till er förening väljer ni att redovisa den huskropp som har högst effekt installerad.
-">
-						<span class="glyphicon glyphicon-exclamation-sign"></span>
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="form-group" id="checkboxes">
-		<label for="checkBox"> Föreningen har tillgång till: </label>
-		<div class="col-xs-20">
-			<input type="checkbox" name="alternatives" value="garage"> Garage
-			<input type="checkbox" name="carPool" value="car"> Bilpool
-			<input type="checkbox" name="bikePool" value="bike"> Cykelpool
-		</div>
-	</div>
+</div>
+<div>
+	<button id="clickProperty" class="btn btn-success center-block">Nästa</button>
+</div>
+<script>
+	$('#clickProperty').click(function () {
+		$.ajax({
+			url: 'ShowPropertyInfo',
+			type: 'GET',
+			error: function () {
+				//$('#info').html('<p>An error has occurred</p>');
+			},
+			success: function (data) {
+				console.log('success');
+				$('#propertyInfo').append(data);
+				$('#buildingInfo').hide();
+			}
+		});
+		event.preventDefault();
+	});
+</script>
 
 

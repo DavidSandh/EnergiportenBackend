@@ -1,36 +1,11 @@
 ﻿body {
 	font-family: 'Montserrat', sans-serif;
 	background-image: url("https://images.pexels.com/photos/432786/pexels-photo-432786.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-	padding-top: 50px;
-	padding-bottom: 20px;
-}
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
 }
 
 #form-id {
 	padding: 0px;
 }
-
-
-
 
 .well {
 	background-color: #eff0ee;
@@ -68,6 +43,12 @@ h3 {
 	text-transform: uppercase;
 }
 
+
+h5 {
+	font-size: 15px;
+	text-align: center;
+}
+
 label {
 	font-size: 18px;
 	margin: 15px;
@@ -75,7 +56,7 @@ label {
 
 
 input.field {
-	width: 50%;
+	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -91,8 +72,6 @@ select {
 	padding-right: 20px;
 }
 
-
-
 .btn-success {
 	text-transform: uppercase;
 }
@@ -107,9 +86,9 @@ select {
 	border-color: #125e80;
 }
 
-	.btn-info:hover {
-		background-color: #074B69;
-	}
+.btn-info:hover {
+	background-color: #074B69;
+}
 
 div.well {
 	text-align: center;
@@ -201,8 +180,8 @@ div.stepwizard-step {
 }
 
 .information {
-	margin-left: 15%;
-	margin-right: 15%;
+	margin-left: 60%;
+	margin-right: 60%;
 }
 
 .site-logo {
@@ -221,10 +200,10 @@ div.stepwizard-step {
 	border-style: none;
 }
 
-	.btn-info:hover {
-		background-color: #0d4159;
-		border-style: none;
-	}
+.btn-info:hover {
+	background-color: #0d4159;
+	border-style: none;
+}
 
 .checkboxes {
 	margin-left: 100px;

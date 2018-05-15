@@ -21,74 +21,75 @@
 </div>
 
 <div class="form-group">
-		<div class="form-group">
-			<select class="form-control field">
-				<option>Kommun</option>
-				<option>Malmö</option>
-				<option>Burlöv</option>
-				<option>Svedala</option>
-				<option>Lomma</option>
-				<option>Vellinge</option>
-				<option>Staffanstorp</option>
-				<option>Trelleborg</option>
-			</select>
-		</div>
+	<select class="form-control">
+		<option>Kommun</option>
+		<option>Malmö</option>
+		<option>Burlöv</option>
+		<option>Svedala</option>
+		<option>Lomma</option>
+		<option>Vellinge</option>
+		<option>Staffanstorp</option>
+		<option>Trelleborg</option>
+	</select>
+</div>
+
+<div class="form-group">
 	<div class="col-xs-20">
 		<input type="text" class="form-control field" placeholder="Bostadsrättsförening" required />
 	</div>
 </div>
-<div class="form-group">
-	<div class="col-xs-20">
-		<input type="text" class="form-control field" placeholder="Fastighetsbeteckning">
+	<div class="form-group">
+		<div class="col-xs-20">
+			<input type="text" class="form-control field" placeholder="Fastighetsbeteckning">
+		</div>
 	</div>
-</div>
-<div class="form-group">
-	<div class="col-xs-20">
-		<input type="text" class="form-control field" placeholder="Ort">
+	<div class="form-group">
+		<div class="col-xs-20">
+			<input type="text" class="form-control field" placeholder="Ort">
+		</div>
 	</div>
-</div>
-<div class="form-group">
-	<div class="col-xs-20">
-		<input type="text" class="form-control field" placeholder="Organisationsnummer">
+	<div class="form-group">
+		<div class="col-xs-20">
+			<input type="text" class="form-control field" placeholder="Organisationsnummer">
+		</div>
 	</div>
-</div>
-<div class="form-group">
-	<div class="col-xs-20">
-		<input type="text" class="form-control field" placeholder="Adress" required />
+	<div class="form-group">
+		<div class="col-xs-20">
+			<input type="text" class="form-control field" placeholder="Adress" required />
+		</div>
 	</div>
-</div>
-<div class="form-group">
-	<div class="col-xs-20">
-		<input type="text" class="form-control field" placeholder="Postnr" required />
+	<div class="form-group">
+		<div class="col-xs-20">
+			<input type="text" class="form-control field" placeholder="Postnr" required />
+		</div>
 	</div>
-</div>
-<div class="form-group">
-	<div class="col-xs-20">
-		<input type="text" class="form-control field" placeholder="Ekonomisk förvaltare">
+	<div class="form-group">
+		<div class="col-xs-20">
+			<input type="text" class="form-control field" placeholder="Ekonomisk förvaltare">
+		</div>
 	</div>
-</div>
-<div class="form-group">
-	<div class="col-xs-20">
-		<input type="text" class="form-control field" placeholder="Teknisk förvaltare">
+	<div class="form-group">
+		<div class="col-xs-20">
+			<input type="text" class="form-control field" placeholder="Teknisk förvaltare">
+		</div>
 	</div>
-</div>
-<div>
-	<button id="clickEnergy" class="btn btn-success center-block">Nästa</button>
-</div>
-<script>
-	$('#clickEnergy').click(function () {
-		$.ajax({
-			url: 'ShowEnergyInfo',
-			type: 'GET',
-			error: function () {
-				//$('#info').html('<p>An error has occurred</p>');
-			},
-			success: function (data) {
-				console.log('success');
-				$('#energyInfo').append(data);
-				$('#propertyInfo').hide();
-			}
+	<div>
+		<button id="clickEnergy" class="btn btn-success center-block">Nästa</button>
+	</div>
+	<script>
+		$('#clickEnergy').click(function () {
+			$.ajax({
+				url: 'ShowEnergyInfo',
+				type: 'GET',
+				error: function () {
+					//$('#info').html('<p>An error has occurred</p>');
+				},
+				success: function (data) {
+					console.log('success');
+					$('#energyInfo').append(data);
+					$('#propertyInfo').hide();
+				}
+			});
+			event.preventDefault();
 		});
-		event.preventDefault();
-	});
-</script>
+	</script>

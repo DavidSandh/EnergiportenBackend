@@ -172,6 +172,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Register\indexRegister.js" />
+    <Content Include="Scripts\Register\showBrfSelect.js" />
+    <Content Include="Scripts\Register\showPersonalInfo.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Web.config" />
@@ -194,6 +197,9 @@
     <Content Include="Views\Register\ShowBuildingInfo.cshtml" />
     <Content Include="Views\Register\ShowPropertyInfo.cshtml" />
     <Content Include="Views\Register\ShowEnergyInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.4.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

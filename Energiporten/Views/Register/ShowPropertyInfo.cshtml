@@ -2,6 +2,7 @@
 	ViewBag.Title = "ShowPropertyInfo";
 	Layout = null;
 }
+
 <div class="stepwizard">
 	<div class="stepwizard-row">
 		<div class="stepwizard-step">
@@ -17,7 +18,6 @@
 			<p>Energidata</p>
 		</div>
 	</div>
-
 </div>
 
 <div class="form-group">
@@ -76,7 +76,7 @@
 	<div>
 		<button id="clickEnergy" class="btn btn-success center-block">Nästa</button>
 	</div>
-	<script>
+<script>
 		$('#clickEnergy').click(function () {
 			$.ajax({
 				url: 'ShowEnergyInfo',
@@ -95,4 +95,4 @@
 		$(document).ready(function () {
 			$('[data-toggle="popover"]').popover();
 		});
-	</script>
+</script>

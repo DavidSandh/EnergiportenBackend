@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>reCAPTCHA demo: Simple page</title>
+    <link rel="stylesheet" href="style.css">
+
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+
+  <body>
+    <form action="?" method="POST">
+      <div class="g-recaptcha" data-sitekey="6LfRp1kUAAAAAOdyIcnHT1Fia3yD2yfV2FEMcP3S"></div>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+
+    <div class="main">
+    <h1>Hello, Welcome to my website</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat quibusdam voluptatum magnam temporibus amet recusandae dolor, quod id voluptates neque officiis deserunt culpa. Magnam, explicabo, rem sed excepturi voluptates, repellat ducimus necessitatibus
+    aspernatur consequatur ipsum aperiam odit iusto id nostrum!</p>
+    </div>
+
+    <script>
+      document.querySelector(".main p").style.display = "none";
+      document.querySelector(".main").classList.add("spinner-2");
+
+      // Mimic Server Request
+      setTimeout(() => {
+      document.querySelector(".main").classList.remove("spinner-2");
+      document.querySelector(".main p").style.display = "block";
+      }, 4000);
+    </script>
+  </body>
+</html>

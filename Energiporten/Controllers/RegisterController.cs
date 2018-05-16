@@ -18,14 +18,6 @@ namespace Energiporten.Controllers
         [HttpPost]
         public ActionResult ValidateEmail(string email)
         {
-<<<<<<< HEAD
-            //Sökning i databas görs här
-=======
-            /* 
-             IMPLEMENTATION TODO
-             - Check if email is in database
-             */
->>>>>>> master
             if (email.Equals("test@test.se")) //If e-mail already exists
             {
                 return Json(new { message = "E-postadressen är redan registrerad", works=false});
@@ -39,9 +31,7 @@ namespace Energiporten.Controllers
             return Json(new { message = "E-postadressen är ledig", works = true });
 
         }
-
-<<<<<<< HEAD
-=======
+        
         public ActionResult SimilairBrf(string brf)
         {
             /* 
@@ -52,7 +42,6 @@ namespace Energiporten.Controllers
 
             return Json(new { message = true, brf = similair });
         }
->>>>>>> master
 
         public ActionResult ShowPersonalInfo()
         {

@@ -5,45 +5,52 @@
 @model Energiporten.Models.RegisterModel
 
 <form method="post" action="SubmitUser">
-	<div id="loginInfo" class="form-group">
-		<div class="stepwizard">
-			<div class="stepwizard-row">
-				<div class="stepwizard-step">
-					<a type="button" class="btn btn-primary btn-circle">1</a>
-					<p>Registrera Email  </p>
-				</div>
-				<div class="stepwizard-step">
-					<a type="button" class="btn btn-default btn-circle">2</a>
-					<p>Personlig Information</p>
-				</div>
-				<div class="stepwizard-step">
-					<button type="button" class="btn btn-default btn-circle">3</button>
-					<p>Val av Brf</p>
-				</div>
-			</div>
-		</div>
-		<form action="https://www.energiporten.se/" method="get" class="form-horizontal login">
-			<fieldset>
-				<div class="form-group">
-					<div id="emailMessage" class="confirmMessage"></div>
-					<input type="email" name="email" class="form-control field" id="email" placeholder="E-postadress" required />
-				</div>
-				<div class="form-group">
-					<input type="password" id="password" name="password" class="form-control field" placeholder="Lösenord" required />
-				</div>
-				<div class="form-group">
-					<input type="password" id="passwordAgain" name="passwordAgain" class="form-control field" placeholder="Upprepa lösenord" required />
-				</div>
-				<div id="passwordMessage" hidden></div>
-				<div class="form-group">
-					<input type="submit" id="clickLogin" class="btn btn-success center-block" value="nästa" />
-				</div>
-			</fieldset>
-	</div>
-	<div id="personalInfo"></div>
-	<div id="brfInfo"></div>
-	<div id="buildingInfo"></div>
-	<div id="propertyInfo"></div>
-	<div id="energyInfo"></div>
+    <div id="loginInfo" class="form-group">
+        <div class="stepwizard">
+            <div class="stepwizard-row">
+                <div class="stepwizard-step">
+                    <a type="button" class="btn btn-primary btn-circle">1</a>
+                    <p>Registrera Email  </p>
+                </div>
+                <div class="stepwizard-step">
+                    <a type="button" class="btn btn-default btn-circle">2</a>
+                    <p>Personlig Information</p>
+                </div>
+                <div class="stepwizard-step">
+                    <button type="button" class="btn btn-default btn-circle">3</button>
+                    <p>Val av Brf</p>
+                </div>
+            </div>
+        </div>
+        <form action="https://www.energiporten.se/" method="get" class="form-horizontal login">
+            <fieldset>
+                <div class="form-group">
+                    <div id="emailMessage" class="confirmMessage"></div>
+                    <input type="email" name="email" class="form-control field" id="email" placeholder="E-postadress" required />
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" class="form-control field" placeholder="Lösenord" required />
+                </div>
+                <div class="form-group">
+                    <input type="password" id="passwordAgain" name="passwordAgain" class="form-control field" placeholder="Upprepa lösenord" required />
+                </div>
+                <div id="passwordMessage" hidden></div>
+                <div class="form-group">
+                    <input type="submit" id="clickLogin" class="btn btn-success center-block" value="nästa" />
+                </div>
+                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                <div class="form-group">
+                    <div class="g-recaptcha" data-sitekey="6LfRp1kUAAAAAOdyIcnHT1Fia3yD2yfV2FEMcP3S"></div>
+                </div>
+            </fieldset>
+    </div>
+    <div id="personalInfo"></div>
+    <div id="brfInfo"></div>
+    <div id="buildingInfo"></div>
+    <div id="propertyInfo"></div>
+    <div id="energyInfo"></div>
+
+
+
 </form>
 <script src="@Url.Content("~/Scripts/Register/indexRegister.js")"></script>

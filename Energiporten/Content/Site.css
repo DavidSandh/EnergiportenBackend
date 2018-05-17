@@ -43,7 +43,6 @@ h3 {
 	text-transform: uppercase;
 }
 
-
 h5 {
 	font-size: 15px;
 	text-align: center;
@@ -53,7 +52,6 @@ label {
 	font-size: 18px;
 	margin: 15px;
 }
-
 
 input.field {
 	width: 100%;
@@ -114,9 +112,8 @@ div.dropdown.bootstrap-select.show {
 	margin-left: 26%;
 }
 
-
 div.stepwizard {
-	width: 115%;
+	width: 100%;
 	margin-left: -100px;
 }
 

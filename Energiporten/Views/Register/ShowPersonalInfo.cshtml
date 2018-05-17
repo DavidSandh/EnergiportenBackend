@@ -1,70 +1,69 @@
 ﻿
 @{
-	ViewBag.Title = "ShowPersonalInfo";
-	Layout = null;
+    ViewBag.Title = "ShowPersonalInfo";
+    Layout = null;
 }
 
 <div class="stepwizard">
-	<div class="stepwizard-row">
-		<div class="stepwizard-step">
-			<a type="button" class="btn btn-default btn-circle">1</a>
-			<p>Registrera Email  </p>
-		</div>
-		<div class="stepwizard-step">
-			<a type="button" class="btn btn-primary btn-circle">2</a>
-			<p>Personlig Information</p>
-		</div>
-		<div class="stepwizard-step">
-			<button type="button" class="btn btn-default btn-circle">3</button>
-			<p>Val av Brf</p>
-		</div>
-	</div>
+    <div class="stepwizard-row">
+        <div class="stepwizard-step">
+            <a type="button" class="btn btn-default btn-circle">1</a>
+            <p>Registrera Email  </p>
+        </div>
+        <div class="stepwizard-step">
+            <a type="button" class="btn btn-primary btn-circle">2</a>
+            <p>Personlig Information</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-default btn-circle">3</button>
+            <p>Val av Brf</p>
+        </div>
+    </div>
 </div>
 
 <div class="form-group">
-	<input type="text" class="form-control field" placeholder="Förnamn" name="FirstName">
+    <input type="text" class="form-control field" placeholder="Förnamn" name="FirstName">
 </div>
 
 <div class="form-group">
-	<input type="text" class="form-control field" placeholder="Efternamn" name="LastName">
+    <input type="text" class="form-control field" placeholder="Efternamn" name="LastName">
 </div>
 
 <div class="form-group">
-	<input type="text" class="form-control field" placeholder="Telefonnummer" name="Phone">
+    <input type="text" class="form-control field" placeholder="Telefonnummer" name="Phone">
 </div>
 
 <h5>Adress</h5>
 <div class="form-group">
-	<div id="address-autocomplete">
-		<div id="locationField">
-			<input class="form-control field" id="autocomplete" placeholder="Mingata 20A, Stockholm, 141 75, Stockholm län, Sverige"
-				   onFocus="geolocate()" type="text" autocomplete="off"></input>
-		</div>
-	</div>
-	</div>
-	<div id="address-form" style="display:none;">
-		<div class="form-group">
-			<input name="address" type="text" class="form-control" id="route" maxlength="255" placeholder="Gata" required></input>
-		</div>
-		<div class="form-group">
-			<input name="street_number" type="text" class="form-control" id="street_number" maxlength="10" placeholder="Gatunummer"></input>
-		</div>
-		<div class="form-group">
-			<input name="zip" type="text" class="form-control" id="postal_code" maxlength="10" placeholder="Postnummer" required>
-		</div>
-		<div class="form-group">
-			<input name="city" type="text" class="form-control" id="postal_town" maxlength="100" placeholder="Stad" required></input>
-		</div>
-		<div class="form-group">
-			<input name="admin" type="text" class="form-control" id="administrative_area_level_1" maxlength="100" placeholder="Län" required>
-		</div>
-		<div class="form-group">
-			<input name="country" type="text" class="form-control field" id="country" maxlength="100" placeholder="Land" required>
-		</div>
-	</div>
-
-<div>
-	<button id="clickPersonal" class="btn btn-success center-block">Nästa</button>
+    <div id="address-autocomplete">
+        <div id="locationField">
+            <input class="form-control field" id="autocomplete" placeholder="Mingata 20A, Stockholm, 141 75, Stockholm län, Sverige"
+                   onFocus="geolocate()" type="text" autocomplete="off"></input>
+        </div>
+    </div>
 </div>
-<script src="@Url.Content("~/Scripts/Register/showPersonalInfo.js")"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVRlce9PBZki9IR8K4TLPe4hawRrp0Vdk&libraries=places&callback=initAutocomplete" async defer></script>
+<div id="address-form" style="display:none;">
+    <div class="form-group">
+        <input name="address" type="text" class="form-control" id="route" maxlength="255" placeholder="Gata" required></input>
+    </div>
+    <div class="form-group">
+        <input name="street_number" type="text" class="form-control" id="street_number" maxlength="10" placeholder="Gatunummer"></input>
+    </div>
+    <div class="form-group">
+        <input name="zip" type="text" class="form-control" id="postal_code" maxlength="10" placeholder="Postnummer" required>
+    </div>
+    <div class="form-group">
+        <input name="city" type="text" class="form-control" id="postal_town" maxlength="100" placeholder="Stad" required></input>
+    </div>
+    <div class="form-group">
+        <input name="admin" type="text" class="form-control" id="administrative_area_level_1" maxlength="100" placeholder="Län" required>
+    </div>
+    <div class="form-group">
+        <input name="country" type="text" class="form-control field" id="country" maxlength="100" placeholder="Land" required>
+    </div>
+</div>
+<div>
+    <button id="clickPersonal" class="btn btn-success center-block">Nästa</button>
+</div>
+    <script src="@Url.Content("~/Scripts/Register/showPersonalInfo.js")"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVRlce9PBZki9IR8K4TLPe4hawRrp0Vdk&libraries=places&callback=initAutocomplete" async defer></script>

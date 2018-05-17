@@ -1,5 +1,6 @@
 ﻿var correctEmail;
 var correctPassword;
+
 $('#clickLogin').click(function () {
 	$.ajax({
 		url: 'ShowPersonalInfo',
@@ -83,5 +84,4 @@ $('#passwordAgain').keyup(function () {
 	} else {
 		document.getElementById('clickLogin').disabled = true;
 	}
-
 });

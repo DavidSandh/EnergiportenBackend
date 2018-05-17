@@ -113,8 +113,8 @@ div.dropdown.bootstrap-select.show {
 }
 
 div.stepwizard {
-	width: 100%;
-	margin-left: -100px;
+	width: 110%;
+	margin-left: -75px;
 }
 
 div.stepwizard-row {
@@ -137,7 +137,7 @@ div.stepwizard-step {
 	display: table;
 	width: 100%;
 	position: relative;
-	font-size: 11px;
+	font-size: 10px;
 }
 
 .stepwizard-step button[disabled] {

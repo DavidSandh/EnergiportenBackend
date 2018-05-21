@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <form action="https://www.energiporten.se/" method="get" class="form-horizontal login">
+        <form method="post" action="SubmitUser" class="form-horizontal login">
             <fieldset>
                 <div class="form-group">
                     <div id="emailMessage" class="confirmMessage"></div>
@@ -36,12 +36,12 @@
                 </div>
                 <div id="passwordMessage" hidden></div>
                 <div class="form-group">
-                    <input type="submit" id="clickLogin" class="btn btn-success center-block" value="nästa" />
+                    <button id="clickLogin" class="btn btn-success center-block" value="nästa">Nästa</button>
                 </div>
-                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                <!--<script src="https://www.google.com/recaptcha/api.js" async defer></script>
                 <div class="form-group">
                     <div class="g-recaptcha" data-sitekey="6LfRp1kUAAAAAOdyIcnHT1Fia3yD2yfV2FEMcP3S"></div>
-                </div>
+                </div>-->
             </fieldset>
     </div>
     <div id="personalInfo"></div>

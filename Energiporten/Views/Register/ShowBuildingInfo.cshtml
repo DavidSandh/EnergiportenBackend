@@ -21,17 +21,17 @@
 	</div>
 </div>
 <div class="form-group">
-	<input type="text" class="form-control" placeholder="Byggår">
+	<input name="buildingYear" type="text" class="form-control" placeholder="Byggår">
 </div>
 <div class="form-group">
-	<input type="text" class="form-control" placeholder="Antal våningar">
+	<input name="buildingFloor" type="text" class="form-control" placeholder="Antal våningar">
 </div>
 <div class="form-group">
-	<input type="number" class="form-control" placeholder="Antal boende">
+	<input name="buildingLiving" type="number" class="form-control" placeholder="Antal boende">
 </div>
 <div class="form-group">
 	<div class="input-group">
-		<input type="number" class="form-control" placeholder="År som ventilationskontroll genomfördes">
+		<input name="buildingVentYear" type="number" class="form-control" placeholder="År som ventilationskontroll genomfördes">
 		<div class="input-group-btn">
 			<button type="button" class="btn btn-info" data-toggle="popover" title="information" data-content="Sedan 1991 finns det en förordning som innebär att funktionskontroll av ventilationssystem, OVK, i byggnader ska utföras. Av reglerna framgår hur funktionskontrollen går till. Såvida inte föreningen har installerat till- och frånluftssystem så gäller besiktningsprotokollet i sex år, annars 3 år.
 Syftet är bland annat att säkerställa ett tillfredsställande inomhusklimat i byggnader och vid en besiktning kontrollera hur ventilationsanläggningen sköts och fungerar. Funktionskontroll ska utföras innan ett ventilationssystem tas i bruk för första gången, en första besiktning, eller vid en ombyggnad som även omfattat ventilationssystemet. Befintliga byggnader ska kontrolleras vid regelbundet återkommande besiktningar.">
@@ -42,7 +42,7 @@ Syftet är bland annat att säkerställa ett tillfredsställande inomhusklimat i
 </div>
 <div class="form-group">
 	<div class="input-group">
-		<select class="form-control">
+		<select name="buildingVentType" class="form-control">
 			<option>Ventilationstyp</option>
 			<option>F-system (Mekanisk frånluft)</option>
 			<option>FX-system (Mekanisk frånluft + återvinning)</option>
@@ -63,24 +63,24 @@ FTX-system (Från- och tilluft med värmeåtervinning): I en byggnad med FTX-sys
 </div>
 <div class="form-group">
 	<div class="input-group">
-		<input type="text" class="form-control" placeholder="A-temp">
+		<input name="buildingTemp" type="text" class="form-control" placeholder="A-temp">
 		<div class="input-group-btn">
 			<button type="button" class="btn btn-info" data-toggle="popover" title="information" data-content="Arean i nämnaren skall vara definierad som Atemp, ett begrepp som också används i energiberäkningar enligt Boverkets Byggregler, definierad så här: Den golvarea i temperaturreglerade utrymmen som är avsedd att värmas till mer än 10 grader och som är begränsad av klimatskärmens insida."> <span class="glyphicon glyphicon-exclamation-sign"></span></button>
 		</div>
 	</div>
 </div>
 <div class="form-group">
-	<input type="number" class="form-control" placeholder="Antal huskroppar">
+	<input name="buildings" type="number" class="form-control" placeholder="Antal huskroppar">
 </div>
 <div class="form-group">
-	<input type="number" class="form-control" placeholder="Antal lägenheter">
+	<input name="buildingApartments" type="number" class="form-control" placeholder="Antal lägenheter">
 </div>
 <div class="form-group">
-	<input type="text" class="form-control" placeholder="Inhomhustemperatur">
+	<input name="buildingTempIndoor" type="text" class="form-control" placeholder="Inhomhustemperatur">
 </div>
 <div class="form-group">
 	<div class="input-group">
-		<select class="form-control" required>
+		<select name="buildingFuse" class="form-control" required>
 			<option>Elsäkringsstorlek</option>
 			<option>35A </option>
 			<option>50A</option>

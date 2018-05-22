@@ -1,0 +1,4 @@
+div.stepwizard {
+	width: 110%;
+	margin-left: -75px;
+}

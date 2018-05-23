@@ -1,19 +1,19 @@
 ﻿
 @{
     ViewBag.Title = "RegisterCompleted";
-    @Layout = null;
+    Layout = null;
 }
 
 <p>Ditt konto har blivit registrerat.</p>
 
 <script>
-    document.querySelector(".main p").style.display = "none";
-    document.querySelector(".main").classList.add("spinner-2");
+    document.querySelector(".RegisterCompleted p").style.display = "none";
+    document.querySelector(".RegisterCompleted").classList.add("spinner-2");
 
     // Mimic Server Request
     setTimeout(() => {
-        document.querySelector(".main").classList.remove("spinner-2");
-        document.querySelector(".main p").style.display = "block";
+        document.querySelector(".RegisterCompleted").classList.remove("spinner-2");
+        document.querySelector(".RegisterCompleted p").style.display = "block";
     }, 4000);
 </script>
 

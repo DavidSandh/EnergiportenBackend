@@ -20,6 +20,10 @@ h4 {
 	margin-top: -30px;
 }
 
+.modal-footer {
+    text-align: center;
+}
+
 a.eye-open {
 	position: absolute;
 	margin-left: 90px;
@@ -203,5 +207,38 @@ div.stepwizard-step {
 }
 
 .checkboxes {
-	margin-left: 100px;
+	margin-left: 20px;
+}
+
+#chboxes1, #chboxes2, #chboxes3, #chboxes4 {
+    list-style: none;
+    float: left;
+    text-align: center;
+}
+
+.checkBox > h4 {
+    float: left;
+}
+
+.spinner-2:before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: -30px;
+    margin-left: -30px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: green;
+    border-bottom-color: green;
+    animation: spinner 0.7s ease infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
 }

@@ -4,36 +4,42 @@
     Layout = null;
 }
 <div class="stepwizard">
-	<div class="stepwizard-row">
-		<div class="stepwizard-step">
-			<a type="button" class="btn btn-default btn-circle">1</a>
-			<p>Registrera Email  </p>
-		</div>
-		<div class="stepwizard-step">
-			<a type="button" class="btn btn-default btn-circle">2</a>
-			<p>Personlig Information</p>
-		</div>
-		<div class="stepwizard-step">
-			<button type="button" class="btn btn-primary btn-circle">3</button>
-			<p>Val av Brf</p>
-		</div>
-	</div>
-</div>
-<input type="text" id="searchBrf" />
-<div id="form-id" class="form-group">
-    <div class="row-fluid">
-        <select id="selectBrf" class="selectpicker" data-show-subtext="true" data-live-search="true">
-            <option data-subtext="" value="none">Sök efter din förening</option>
-        </select>
+    <div class="stepwizard-row">
+        <div class="stepwizard-step">
+            <a type="button" class="btn btn-default btn-circle">1</a>
+            <p>Registrera Email  </p>
+        </div>
+        <div class="stepwizard-step">
+            <a type="button" class="btn btn-default btn-circle">2</a>
+            <p>Personlig Information</p>
+        </div>
+        <div class="stepwizard-step">
+            <button type="button" class="btn btn-primary btn-circle">3</button>
+            <p>Val av Brf</p>
+        </div>
     </div>
 </div>
-<div>
-    <button type="submit" class="btn btn-success center-block">Spara</button>
-    <button id="addBrf" class="btn btn-success center-block">Lägg till Brf</button>
+
+<div class="form-group">
+   <div class="col-xs-20">
+        <input type="text" class="selectpicker" id="searchBrf" placeholder="Sök efter din bostadsrättsförening" />
+    </div>
+    <div id="form-id" class="form-control">
+        <div class="row-fluid">
+            <select id="selectBrf" class="form-control" data-show-subtext="true" data-live-search="true">
+                <option data-subtext="" value="none">Sök efter din förening</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div>
+        <button type="submit" class="btn btn-success center-block">Spara</button>
+        <button id="addBrf" class="btn btn-success center-block">Lägg till Brf</button>
+    </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="@Url.Content("~/Scripts/Register/showBrfSelect.js")"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="@Url.Content("~/Scripts/Register/showBrfSelect.js")"></script>

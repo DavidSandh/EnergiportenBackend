@@ -1,3 +1,3 @@
 # EnergiportenBackend
 
-Förbättring av registreringsprocess skapad i ASP.NET av studenter på Malmö Universitet.
+Förbättring och uppdatering av Energiporten.se registreringsprocess skapad i ASP.NET av studenter på Malmö Universitet.

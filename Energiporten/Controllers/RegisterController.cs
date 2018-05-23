@@ -69,6 +69,12 @@ namespace Energiporten.Controllers
         {
             return View();
         }
+
+        public ActionResult RegisterCompleted()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult SubmitUser(RegisterModel model)
         {

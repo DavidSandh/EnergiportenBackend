@@ -124,10 +124,27 @@
 </div>
 <br>
 <div>
-	<button type="submit" value="Slutför" id="nextbutton2" class="btn btn-success center-block">Slutför</button>
+	<button type="submit" value="Slutför" id="complete" class="btn btn-success center-block">Slutför</button>
 </div>
 <script>
-	$(document).ready(function () {
-		$('[data-toggle="popover"]').popover();
-	});
+    $(document).ready(function () {
+        $('[data-toggle="popover"]').popover();
+    });
+    
+    $('#complete').click(function () {
+        $.ajax({
+            url: 'RegisterCompleted',
+            type: 'GET',
+            error: function () {
+                //$('#info').html('<p>An error has occurred</p>');
+            },
+            success: function (data) {
+                console.log('success');
+                $('#registerCompleted').append(data);
+                $('#energyInfo').hide();
+            }
+        });
+        event.preventDefault();
+    });
+
 </script>

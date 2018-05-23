@@ -197,6 +197,7 @@
     <Content Include="Views\Register\ShowBuildingInfo.cshtml" />
     <Content Include="Views\Register\ShowPropertyInfo.cshtml" />
     <Content Include="Views\Register\ShowEnergyInfo.cshtml" />
+    <Content Include="Views\Register\RegisterCompleted.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.4.0" />

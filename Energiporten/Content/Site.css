@@ -219,3 +219,20 @@ div.stepwizard-step {
 .checkBox > h4 {
     float: left;
 }
+
+.spinner-2:before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: -30px;
+    margin-left: -30px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: green;
+    border-bottom-color: green;
+    animation: spinner 0.7s ease infinite;
+}

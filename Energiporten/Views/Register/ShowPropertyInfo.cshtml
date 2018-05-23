@@ -19,47 +19,6 @@
         </div>
     </div>
 </div>
-
-<div class="form-group">
-    <select class="form-control">
-        <option>Kommun</option>
-        <option>Malmö</option>
-        <option>Burlöv</option>
-        <option>Svedala</option>
-        <option>Lomma</option>
-        <option>Vellinge</option>
-        <option>Staffanstorp</option>
-        <option>Trelleborg</option>
-    </select>
-</div>
-<div class="form-group">
-    <div id="address-autocomplete">
-        <div id="locationField">
-            <input class="form-control field" id="autocomplete" placeholder="Mingata 20A, Stockholm, 141 75, Stockholm län, Sverige"
-                   onFocus="geolocate()" type="text" autocomplete="off"></input>
-        </div>
-    </div>
-</div>
-<div id="address-form" style="display:none;">
-    <div class="form-group">
-        <input name="brfaddress" type="text" class="form-control" id="route" maxlength="255" placeholder="Gata" required></input>
-    </div>
-    <div class="form-group">
-        <input name="brfstreet_number" type="text" class="form-control" id="street_number" maxlength="10" placeholder="Gatunummer"></input>
-    </div>
-    <div class="form-group">
-        <input name="brfzip" type="text" class="form-control" id="postal_code" maxlength="10" placeholder="Postnummer" required>
-    </div>
-    <div class="form-group">
-        <input name="brfcity" type="text" class="form-control" id="postal_town" maxlength="100" placeholder="Stad" required></input>
-    </div>
-    <div class="form-group">
-        <input name="brfadmin" type="text" class="form-control" id="administrative_area_level_1" maxlength="100" placeholder="Län" required>
-    </div>
-    <div class="form-group">
-        <input name="brfcountry" type="text" class="form-control field" id="country" maxlength="100" placeholder="Land" required>
-    </div>
-</div>
 <div class="form-group">
     <div class="col-xs-20">
         <input type="text" class="form-control field" placeholder="Bostadsrättsförening" required />
@@ -76,6 +35,34 @@
     </div>
 </div>
 <div class="form-group">
+    <div id="brfAddress-autocomplete">
+        <div id="locationField">
+            <input class="form-control field" id="brfAutocomplete" placeholder="Mingata 20A, Stockholm, 141 75, Stockholm län, Sverige"
+                   onFocus="brfGeolocate()" type="text" autocomplete="off"></input>
+        </div>
+    </div>
+</div>
+<div id="brfAddress-form" style="display:none;">
+    <div class="form-group">
+        <input name="brfAddress" type="text" class="form-control" id="brf_route" maxlength="255" placeholder="Gata" required></input>
+    </div>
+    <div class="form-group">
+        <input name="brfStreet_number" type="text" class="form-control" id="brf_street_number" maxlength="10" placeholder="Gatunummer"></input>
+    </div>
+    <div class="form-group">
+        <input name="brfZip" type="text" class="form-control" id="brf_postal_code" maxlength="10" placeholder="Postnummer" required>
+    </div>
+    <div class="form-group">
+        <input name="brfCity" type="text" class="form-control" id="brf_postal_town" maxlength="100" placeholder="Stad" required></input>
+    </div>
+    <div class="form-group">
+        <input name="brfAdmin" type="text" class="form-control" id="brf_administrative_area_level_1" maxlength="100" placeholder="Län" required>
+    </div>
+    <div class="form-group">
+        <input name="brfCountry" type="text" class="form-control field" id="brf_country" maxlength="100" placeholder="Land" required>
+    </div>
+</div>
+<div class="form-group">
     <div class="col-xs-20">
         <input type="text" class="form-control field" placeholder="Ekonomisk förvaltare">
     </div>
@@ -89,13 +76,17 @@
     <button id="clickEnergy" class="btn btn-success center-block">Nästa</button>
 </div>
 <script>
+    initAutocomplete2();
+
+    $(document).on('change', '#brfAutocomplete', function () {
+        $('#propertyInfo').find('#brfAddress-form').show();
+        $('#propertyInfo').find('#brfAddress-autocomplete').remove();
+    });
+
     $('#clickEnergy').click(function () {
         $.ajax({
             url: 'ShowEnergyInfo',
             type: 'GET',
-            error: function () {
-                //$('#info').html('<p>An error has occurred</p>');
-            },
             success: function (data) {
                 console.log('success');
                 $('#energyInfo').append(data);
@@ -107,7 +98,4 @@
     $(document).ready(function () {
         $('[data-toggle="popover"]').popover();
     });
-
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVRlce9PBZki9IR8K4TLPe4hawRrp0Vdk&libraries=places&callback=initAutocomplete" async defer></script>
-

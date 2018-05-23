@@ -69,7 +69,7 @@ namespace Energiporten.Controllers
         {
             return View();
         }
-
+        
         public ActionResult RegisterCompleted()
         {
             return View();
@@ -78,7 +78,7 @@ namespace Energiporten.Controllers
         [HttpPost]
         public ActionResult SubmitUser(RegisterModel model)
         {
-            return Content($"Email: {model.Email}, Password: {model.Password}, Password Again: {model.PasswordAgain}, Fistname: {model.FirstName}, Lastname: {model.LastName}, Address: {model.Address}, Tele: {model.Phone}, Address: {model.Address}, Gatunummer: {model.Street_number}, Gatunummer: {model.Street_number}, Zip: {model.Zip}, City: {model.City}, Admin: {model.Admin}, Country: {model.Country} {model.BuildingApartments}");
+            return Content($"Email: {model.Email}, Password: {model.Password}, Password Again: {model.PasswordAgain}, Fistname: {model.FirstName}, Lastname: {model.LastName}, Address: {model.Address}, Tele: {model.Phone}, Address: {model.Address}, Gatunummer: {model.Street_number}, Gatunummer: {model.Street_number}, Zip: {model.Zip}, City: {model.City}, Admin: {model.Admin}, Country: {model.Country}");
         }
     }
 }

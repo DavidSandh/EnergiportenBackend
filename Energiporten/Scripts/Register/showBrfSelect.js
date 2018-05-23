@@ -18,6 +18,8 @@
     });
 });
 
+
+
 $('#saveUser').click(function () {
     $.ajax({
         url: 'ShowPersonalInfo',
@@ -41,6 +43,21 @@ $('#addBrf').click(function () {
 			$('#buildingInfo').append(data);
 			$('#brfInfo').hide();
 
+		}
+	});
+	event.preventDefault();
+});
+$('#savePerson').click(function () {
+	$.ajax({
+		url: 'RegisterCompleted',
+		type: 'GET',
+		error: function () {
+			//$('#info').html('<p>An error has occurred</p>');
+		},
+		success: function (data) {
+			console.log('success');
+			$('#registerCompleted').append(data);
+			$('#brfInfo').hide();
 		}
 	});
 	event.preventDefault();

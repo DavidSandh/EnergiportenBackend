@@ -277,10 +277,3 @@ div.stepwizard-step {
 		transform: rotate(360deg);
 	}
 }
-
-
-@keyframes spinner {
-    to {
-        transform: rotate(360deg);
-    }
-}

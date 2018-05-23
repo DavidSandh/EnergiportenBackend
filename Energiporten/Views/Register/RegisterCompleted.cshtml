@@ -6,18 +6,16 @@
 
 <div class="main">
     <p>Ditt konto har blivit registrerat.</p>
-</div>
-<div>
-<script>
-    document.querySelector(".main p").style.display = "none";
-    document.querySelector(".main").classList.add("spinner-2");
+    <script>
+        document.querySelector(".main p").style.display = "none";
+        document.querySelector(".main").classList.add("spinner-2");
 
         // Mimic Server Request
-    setTimeout(() => {
-        document.querySelector(".main").classList.remove("spinner-2");
-        document.querySelector(".main p").style.display = "block";
-    }, 4000);
-</script>
+        setTimeout(() => {
+            document.querySelector(".main").classList.remove("spinner-2");
+            document.querySelector(".main p").style.display = "block";
+        }, 4000);
+    </script>
 </div>
 
 

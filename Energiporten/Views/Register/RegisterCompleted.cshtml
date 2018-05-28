@@ -4,20 +4,19 @@
     Layout = null;
 }
 
-<div class="main">
-    <p>Ditt konto har blivit registrerat.</p>
-</div>
-<div>
-<script>
-    document.querySelector(".main p").style.display = "none";
-    document.querySelector(".main").classList.add("spinner-2");
+    <div class="main">
+        <h1 style="font-family: 'Montserrat'; color: green";><strong>Ditt konto har blivit registrerat!</strong><br />
+        (fast inte på riktigt)</h1>
+        <script>
+            document.querySelector(".main h1").style.display = "none";
+            document.querySelector(".main").classList.add("spinner-2");
 
-        // Mimic Server Request
-    setTimeout(() => {
-        document.querySelector(".main").classList.remove("spinner-2");
-        document.querySelector(".main p").style.display = "block";
-	}, 4000);
-</script>
+            // Mimic Server Request
+            setTimeout(() => {
+                document.querySelector(".main").classList.remove("spinner-2");
+                document.querySelector(".main h1").style.display = "block";
+            }, 2000);
+        </script>
 </div>
 
 

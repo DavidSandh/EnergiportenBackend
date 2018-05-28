@@ -1,101 +1,101 @@
 ﻿@{
-    ViewBag.Title = "ShowPropertyInfo";
-    Layout = null;
+	ViewBag.Title = "ShowPropertyInfo";
+	Layout = null;
 }
 
 <div class="stepwizard">
-    <div class="stepwizard-row">
-        <div class="stepwizard-step">
-            <button type="button" class="btn btn-default btn-circle">1</button>
-            <p>Byggnad</p>
-        </div>
-        <div class="stepwizard-step">
-            <button type="button" class="btn btn-primary btn-circle">2</button>
-            <p>Fastighet</p>
-        </div>
-        <div class="stepwizard-step">
-            <button type="button" class="btn btn-default btn-circle">3</button>
-            <p>Energidata</p>
-        </div>
-    </div>
+	<div class="stepwizard-row">
+		<div class="stepwizard-step">
+			<button type="button" class="btn btn-default btn-circle">1</button>
+			<p>Byggnad</p>
+		</div>
+		<div class="stepwizard-step">
+			<button type="button" class="btn btn-primary btn-circle">2</button>
+			<p>Fastighet</p>
+		</div>
+		<div class="stepwizard-step">
+			<button type="button" class="btn btn-default btn-circle">3</button>
+			<p>Energidata</p>
+		</div>
+	</div>
 </div>
 <div class="form-group">
-    <div class="col-xs-20">
-        <input type="text" class="form-control field" placeholder="Bostadsrättsförening" required />
-    </div>
+	<div class="col-xs-20">
+		<input type="text" class="form-control field" placeholder="Bostadsrättsförening" required />
+	</div>
 </div>
 <div class="form-group">
-    <div class="col-xs-20">
-        <input type="text" class="form-control field" placeholder="Fastighetsbeteckning">
-    </div>
+	<div class="col-xs-20">
+		<input type="text" class="form-control field" placeholder="Fastighetsbeteckning">
+	</div>
 </div>
 <div class="form-group">
-    <div class="col-xs-20">
-        <input type="text" class="form-control field" placeholder="Organisationsnummer">
-    </div>
+	<div class="col-xs-20">
+		<input type="text" class="form-control field" placeholder="Organisationsnummer">
+	</div>
 </div>
 <div class="form-group">
-    <div id="brfAddress-autocomplete">
-        <div id="locationField">
-            <input class="form-control field" id="brfAutocomplete" placeholder="Mingata 20A, Stockholm, 141 75, Stockholm län, Sverige"
-                   onFocus="brfGeolocate()" type="text" autocomplete="off"></input>
-        </div>
-    </div>
+	<div class="col-xs-20">
+		<input type="text" class="form-control field" placeholder="Ekonomisk förvaltare">
+	</div>
+</div>
+<div class="form-group">
+	<div class="col-xs-20">
+		<input type="text" class="form-control field" placeholder="Teknisk förvaltare">
+	</div>
+</div>
+<div class="form-group">
+	<div id="brfAddress-autocomplete">
+		<div id="locationField">
+			<input class="form-control field" id="brfAutocomplete" placeholder="Mingata 20A, Stockholm, 141 75, Stockholm län, Sverige"
+				   onFocus="brfGeolocate()" type="text" autocomplete="off"></input>
+		</div>
+	</div>
 </div>
 <div id="brfAddress-form" style="display:none;">
-    <div class="form-group">
-        <input name="brfAddress" type="text" class="form-control" id="brf_route" maxlength="255" placeholder="Gata" required></input>
-    </div>
-    <div class="form-group">
-        <input name="brfStreet_number" type="text" class="form-control" id="brf_street_number" maxlength="10" placeholder="Gatunummer"></input>
-    </div>
-    <div class="form-group">
-        <input name="brfZip" type="text" class="form-control" id="brf_postal_code" maxlength="10" placeholder="Postnummer" required>
-    </div>
-    <div class="form-group">
-        <input name="brfCity" type="text" class="form-control" id="brf_postal_town" maxlength="100" placeholder="Stad" required></input>
-    </div>
-    <div class="form-group">
-        <input name="brfAdmin" type="text" class="form-control" id="brf_administrative_area_level_1" maxlength="100" placeholder="Län" required>
-    </div>
-    <div class="form-group">
-        <input name="brfCountry" type="text" class="form-control field" id="brf_country" maxlength="100" placeholder="Land" required>
-    </div>
-</div>
-<div class="form-group">
-    <div class="col-xs-20">
-        <input type="text" class="form-control field" placeholder="Ekonomisk förvaltare">
-    </div>
-</div>
-<div class="form-group">
-    <div class="col-xs-20">
-        <input type="text" class="form-control field" placeholder="Teknisk förvaltare">
-    </div>
+	<div class="form-group">
+		<input name="brfAddress" type="text" class="form-control" id="brf_route" maxlength="255" placeholder="Gata" required></input>
+	</div>
+	<div class="form-group">
+		<input name="brfStreet_number" type="text" class="form-control" id="brf_street_number" maxlength="10" placeholder="Gatunummer"></input>
+	</div>
+	<div class="form-group">
+		<input name="brfZip" type="text" class="form-control" id="brf_postal_code" maxlength="10" placeholder="Postnummer" required>
+	</div>
+	<div class="form-group">
+		<input name="brfCity" type="text" class="form-control" id="brf_postal_town" maxlength="100" placeholder="Stad" required></input>
+	</div>
+	<div class="form-group">
+		<input name="brfAdmin" type="text" class="form-control" id="brf_administrative_area_level_1" maxlength="100" placeholder="Län" required>
+	</div>
+	<div class="form-group">
+		<input name="brfCountry" type="text" class="form-control field" id="brf_country" maxlength="100" placeholder="Land" required>
+	</div>
 </div>
 <div>
-    <button id="clickEnergy" class="btn btn-success center-block">Nästa</button>
+	<button id="clickEnergy" class="btn btn-success center-block">Nästa</button>
 </div>
 <script>
-    initAutocomplete2();
+	initAutocomplete2();
 
-    $(document).on('change', '#brfAutocomplete', function () {
-        $('#propertyInfo').find('#brfAddress-form').show();
-        $('#propertyInfo').find('#brfAddress-autocomplete').remove();
-    });
+	$(document).on('change', '#brfAutocomplete', function () {
+		$('#propertyInfo').find('#brfAddress-form').show();
+		$('#propertyInfo').find('#brfAddress-autocomplete').remove();
+	});
 
-    $('#clickEnergy').click(function () {
-        $.ajax({
-            url: 'ShowEnergyInfo',
-            type: 'GET',
-            success: function (data) {
-                console.log('success');
-                $('#energyInfo').append(data);
-                $('#propertyInfo').hide();
-            }
-        });
-        event.preventDefault();
-    });
-    $(document).ready(function () {
-        $('[data-toggle="popover"]').popover();
-    });
+	$('#clickEnergy').click(function () {
+		$.ajax({
+			url: 'ShowEnergyInfo',
+			type: 'GET',
+			success: function (data) {
+				console.log('success');
+				$('#energyInfo').append(data);
+				$('#propertyInfo').hide();
+			}
+		});
+		event.preventDefault();
+	});
+	$(document).ready(function () {
+		$('[data-toggle="popover"]').popover();
+	});
 </script>

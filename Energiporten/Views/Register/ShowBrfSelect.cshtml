@@ -15,25 +15,28 @@
         </div>
         <div class="stepwizard-step">
             <button type="button" class="btn btn-primary btn-circle">3</button>
-            <p>Val av Brf</p>
+            <p>Val av BRF</p>
         </div>
     </div>
 </div>
 
 <div class="form-group">
-   <div class="col-xs-20">
+  <!-- <div class="col-xs-20">
         <input type="text" class="selectpicker" id="searchBrf" placeholder="Sök efter din bostadsrättsförening" />
-    </div>
+    </div> -->
     <div id="form-id" class="form-control">
         <div class="row-fluid">
-            <select id="selectBrf" class="form-control" data-show-subtext="true" data-live-search="true">
-                <option data-subtext="" value="none">Sök efter din förening</option>
-            </select>
+			<select id="selectBrf" class="form-control" data-show-subtext="true" data-live-search="true">
+				<option data-subtext="" value="none" disabled selected>Sök efter din förening</option>
+				<option data-subtext="" value="none">brf testing 1</option>
+				<option data-subtext="" value="none">brf testing 2</option>
+				<option data-subtext="" value="none">brf testing 3</option>
+			</select>
         </div>
     </div>
     <br>
     <div>
-        <button type="submit" class="btn btn-success center-block">Spara</button>
+        <button type="submit" id="savePerson" class="btn btn-success center-block">Spara</button>
         <button id="addBrf" class="btn btn-success center-block">Lägg till Brf</button>
     </div>
 </div>
